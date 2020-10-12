@@ -12,6 +12,22 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+function fizzBuzz(n) {
+  for (let i = 1; i <= n; i++) {
+    //   is the n a multiple of 3 && 5
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log("fizzbuzz");
+      //   is the n a multiple of 3
+    } else if (i % 3 === 0) {
+      console.log("fizz");
+      //   is the n a multiple of 5
+    } else if (i % 5 === 0) {
+      console.log("buzz");
+      //   return n
+    } else {
+      console.log(i);
+    }
+  }
+}
 
 module.exports = fizzBuzz;
