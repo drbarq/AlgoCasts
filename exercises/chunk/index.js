@@ -40,7 +40,6 @@ function chunk(array, size) {
     chunked.push(array.slice(index, index + size));
     index += size;
   }
-
   return chunked;
 }
 
