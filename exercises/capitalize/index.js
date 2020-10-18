@@ -8,14 +8,27 @@
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
 function capitalize(str) {
-  const words = [];
+  let result = str[0].toUpperCase();
 
-  for (let word of str.split(" ")) {
-    const uppserWord = word[0].toUpperCase() + word.slice(1);
-    words.push(uppserWord);
+  for (let i = 1; i < str.length; i++) {
+    if (str[i - 1] === " ") {
+      result += str[i].toUpperCase();
+    } else {
+      result += str[i];
+    }
   }
-  return words.join(" ");
+
+  return result;
 }
+// function capitalize(str) {
+//   const words = [];
+
+//   for (let word of str.split(" ")) {
+//     const uppserWord = word[0].toUpperCase() + word.slice(1);
+//     words.push(uppserWord);
+//   }
+//   return words.join(" ");
+// }
 
 // function capitalize(str) {
 //   let finishedSentence = [];
@@ -24,21 +37,26 @@ function capitalize(str) {
 
 //   console.log(sentenceArr);
 
-//   for (let i = 0; i <= sentenceArr.length; i++) {
-//     let upperCaseLetter = sentenceArr[i][0].toUpperCase();
-
-//     let uppercaseWord = upperCaseLetter + sentenceArr[i].slice(1);
-
-//     console.log(uppercaseWord);
-//     finishedSentence.push(uppercaseWord);
-//     // finishedSentence = finishedSentence + " " + uppercaseWord;
-//     console.log(finishedSentence);
+//   for (let word of str.split(" ")) {
+//     let upperWord = word[0].toUpperCase() + word.slice(1);
+//     finishedSentence.push(upperWord);
 //   }
+
+//   //   for (let i = 0; i <= sentenceArr.length; i++) {
+//   //     console.log(sentenceArr[i][0], "sentenceArr[i][0");
+
+//   //     // let upperCaseLetter = sentenceArr[i][0].toUpperCase();
+//   //     // let uppercaseWord = upperCaseLetter + sentenceArr[i].slice(1);
+//   //     // console.log(uppercaseWord);
+//   //     // finishedSentence.push(uppercaseWord);
+//   //     // // finishedSentence = finishedSentence + " " + uppercaseWord;
+//   //     // console.log(finishedSentence);
+//   //   }
 
 //   console.log("hello");
 //   console.log(finishedSentence);
 
-//   return finishedSentence;
+//   return finishedSentence.join(" ");
 // }
 
 module.exports = capitalize;
